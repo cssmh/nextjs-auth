@@ -34,7 +34,6 @@ const LoginPage = () => {
             className="w-full h-[85%]"
           />
         </div>
-
         <div className="card w-[70%] h-[80%] shadow-xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control mt-5">
@@ -46,10 +45,10 @@ const LoginPage = () => {
                 {...register("email")}
                 placeholder="Email"
                 className="input input-bordered"
+                style={{ outline: "none" }}
                 required
               />
             </div>
-
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
@@ -57,12 +56,12 @@ const LoginPage = () => {
               <input
                 {...register("password")}
                 type="password"
-                placeholder="Email"
+                placeholder="password"
                 className="input input-bordered"
+                style={{ outline: "none" }}
                 required
               />
             </div>
-
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-accent btn-outline">
                 Login

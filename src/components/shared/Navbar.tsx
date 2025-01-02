@@ -58,14 +58,14 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <button className="btn btn-error btn-outline text-white rounded-full px-5">
+      <div className="navbar-end space-x-2">
+        <button className="btn btn-sm btn-error btn-outline text-white rounded-full px-5">
           Logout
         </button>
 
         <Link
           href="/login"
-          className="btn btn-accent btn-outline text-white rounded-full px-5"
+          className="btn btn-sm btn-accent btn-outline text-white rounded-full px-5"
         >
           Login
         </Link>

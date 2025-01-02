@@ -42,7 +42,6 @@ const RegisterPage = () => {
             className="w-full h-[85%]"
           />
         </div>
-
         <div className="card w-[70%] h-[70%] shadow-xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body py-3">
             <div className="form-control">
@@ -54,6 +53,7 @@ const RegisterPage = () => {
                 {...register("username")}
                 placeholder="User Name"
                 className="input input-bordered"
+                style={{ outline: "none" }}
                 required
               />
             </div>
@@ -66,10 +66,10 @@ const RegisterPage = () => {
                 {...register("email")}
                 placeholder="Email"
                 className="input input-bordered"
+                style={{ outline: "none" }}
                 required
               />
             </div>
-
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
@@ -79,10 +79,10 @@ const RegisterPage = () => {
                 type="password"
                 placeholder="Password"
                 className="input input-bordered"
+                style={{ outline: "none" }}
                 required
               />
             </div>
-
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-accent btn-outline">
                 Register
