@@ -1,3 +1,4 @@
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 
 type UserProps = {
@@ -67,16 +68,21 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
         </ul>
       </div>
       <div className="navbar-end space-x-2">
-        <button className="btn btn-sm btn-error btn-outline text-white rounded-full px-5">
-          Logout
-        </button>
-
-        <Link
-          href="/login"
-          className="btn btn-sm btn-accent btn-outline text-white rounded-full px-5"
-        >
-          Login
-        </Link>
+        {session?.user ? (
+          <button
+            onClick={() => signOut()}
+            className="btn btn-sm btn-error btn-outline text-white rounded-full px-5"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link
+            href="/login"
+            className="btn btn-sm btn-accent btn-outline text-white rounded-full px-5"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
