@@ -1,4 +1,5 @@
 "use client";
+
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -78,12 +79,12 @@ const LoginPage = () => {
           <p className="text-center">Or Sign Up Using</p>
           <div className="flex justify-center mb-10 mt-2">
             <button
+              className="btn btn-circle "
               onClick={() =>
                 signIn("google", {
                   callbackUrl: "http://localhost:3000/dashboard",
                 })
               }
-              className="btn btn-circle"
             >
               <Image
                 src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png"

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import { getServerSession } from "next-auth";
-import authOptions from "@/utils/authOptions";
+import { authOptions } from "@/utils/authOptions";
 
 export const metadata: Metadata = {
   title: "Nextjs Auth",
