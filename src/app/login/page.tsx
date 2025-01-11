@@ -1,5 +1,4 @@
 "use client";
-
 import { loginUser } from "@/utils/actions/loginUser";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
@@ -25,6 +24,7 @@ const LoginPage = () => {
     // console.log(data);
     try {
       const res = await loginUser(data);
+      // console.log(res);
       if (res.accessToken) {
         alert(res.message);
         localStorage.setItem("accessToken", res.accessToken);
@@ -51,6 +51,7 @@ const LoginPage = () => {
             className="w-full h-[85%]"
           />
         </div>
+
         <div className="card w-[70%] h-[80%] shadow-xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control mt-5">
@@ -62,10 +63,10 @@ const LoginPage = () => {
                 {...register("email")}
                 placeholder="Email"
                 className="input input-bordered"
-                style={{ outline: "none" }}
                 required
               />
             </div>
+
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
@@ -73,12 +74,13 @@ const LoginPage = () => {
               <input
                 {...register("password")}
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 className="input input-bordered"
                 style={{ outline: "none" }}
                 required
               />
             </div>
+
             <div className="form-control mt-6">
               <button type="submit" className="btn btn-accent btn-outline">
                 Login
@@ -97,7 +99,7 @@ const LoginPage = () => {
               className="btn btn-circle "
               onClick={() =>
                 signIn("google", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl: "https://nextjs-auth-fawn-one.vercel.app/dashboard",
                 })
               }
             >
@@ -109,12 +111,12 @@ const LoginPage = () => {
               />
             </button>
             <button
+              className="btn btn-circle"
               onClick={() =>
                 signIn("github", {
-                  callbackUrl: "http://localhost:3000/dashboard",
+                  callbackUrl: "https://nextjs-auth-fawn-one.vercel.app/dashboard",
                 })
               }
-              className="btn btn-circle"
             >
               <Image
                 src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
